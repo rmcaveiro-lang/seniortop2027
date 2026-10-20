@@ -116,6 +116,28 @@ h1,h2,h3,.section-title,.huge-quote,.ten-sub,.date-large,.stat strong{font-famil
 @media(max-width:620px){.has-event-photo .event-photo img[src$="concurso-village.jpg"]{height:390px}.has-event-photo .event-photo:has(img[src$="concurso-village.jpg"]) figcaption{padding-left:22px}}
 </style>
 <style>.stats{grid-template-columns:1.35fr repeat(4,1fr)}.prize-stat strong{font-size:clamp(36px,4.8vw,70px);white-space:nowrap}.prize-breakdown{display:block;font-size:12px;line-height:1.5;color:#d4dfd5;margin-top:10px}.prize-stat{background:linear-gradient(135deg,#dbbe8210,transparent)}@media(max-width:950px){.stats{grid-template-columns:repeat(2,1fr)}.stats .prize-stat{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line);padding:28px 0}.stats .stat:nth-child(2){border-right:1px solid var(--line)}.stats .stat:nth-child(3){border-right:0}.stats .stat:nth-child(4){border-right:1px solid var(--line)}.stats .stat:nth-child(2),.stats .stat:nth-child(3){border-bottom:1px solid var(--line)}}</style>
+
+<style id="site-motion-styles">
+/* Motion is decorative: content remains readable without JavaScript. */
+:root{--motion-ease:cubic-bezier(.22,1,.36,1)}
+main>section[id]{scroll-margin-top:96px}
+.reveal,.reveal.visible{opacity:1;transform:none;transition:none}
+nav a{position:relative;transition:color .25s,opacity .25s}
+nav a:after{content:'';position:absolute;left:0;right:0;bottom:-9px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--motion-ease)}
+nav a[aria-current="location"]{opacity:1;color:var(--gold)}
+nav a[aria-current="location"]:after,nav a:hover:after{transform:scaleX(1)}
+.button{transition:background-color .25s,color .25s,border-color .25s,transform .3s var(--motion-ease)}
+.stage{transition:background-color .25s,color .25s}
+.stage .right-arrow{display:inline-block;transition:transform .3s var(--motion-ease)}
+.stage:hover .right-arrow,.stage.active .right-arrow{transform:translate(3px,-2px)}
+.model-toggle button{transition:background-color .25s,color .25s,border-color .25s}
+.reel-dialog[open]{animation:reel-enter .3s var(--motion-ease) both}
+@keyframes reel-enter{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:none}}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.button:hover{transform:translateY(-2px)}}
+@media(max-width:950px){main>section[id]{scroll-margin-top:90px}nav a:after{bottom:-5px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.reel-dialog[open]{animation:none}.stage .right-arrow{transform:none!important}nav a:after,.stage,.stage .right-arrow,.model-toggle button,.button{transition:none!important}}
+</style>
+
 </head>
 <body>
 <div id="progress"></div>
@@ -151,8 +173,8 @@ stages.forEach((s,i)=>{const b=document.createElement('button');b.type='button';
 function selectStage(i){currentStage=i;const s=stages[i];[...list.children].forEach((b,j)=>b.classList.toggle('active',i===j));document.getElementById('detailNum').textContent=s.final?'EVENTO ESPECIAL':'ETAPA '+s.n;document.getElementById('detailName').textContent=s.name;document.getElementById('detailDate').textContent=s.iso;document.getElementById('detailPlace').textContent=s.place;document.getElementById('detailTag').textContent=s.final?'Dia e horário a confirmar':'Sábado às 15h30';updateStagePhoto(i);}
 const models={a:{eyebrow:'Modelo A',title:'A pista com a CBH. O programa com a TV.',desc:'A CBH organiza a captação e fornece as imagens ou o sinal técnico acordado. A emissora assume a apresentação editorial, narração, comentários, edição e distribuição.',bullets:['CBH: produção e entrega da captação bruta','Emissora: narração, comentários e edição','Emissora: grade, exibição e distribuição','Ambas: acordo sobre direitos e exploração comercial']},b:{eyebrow:'Modelo B',title:'Uma solução completa de produção e exibição.',desc:'A emissora assume a operação técnica e editorial de ponta a ponta, com planejamento, equipe de câmeras, captação, narração, comentários, edição e distribuição.',bullets:['Emissora: planejamento e operação técnica','Emissora: captação, narração e pós-produção','Emissora: grade, exibição e distribuição','CBH e organizadores: acesso e autorizações necessárias']}};
 document.querySelectorAll('[data-model]').forEach(b=>b.addEventListener('click',()=>{let m=models[b.dataset.model];document.querySelectorAll('[data-model]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))});document.getElementById('modelEyebrow').textContent=m.eyebrow;document.getElementById('modelTitle').textContent=m.title;document.getElementById('modelDescription').textContent=m.desc;document.getElementById('modelBullets').innerHTML=m.bullets.map(x=>'<li>'+x+'</li>').join('')}));
-const media=matchMedia('(prefers-reduced-motion: reduce)');if('IntersectionObserver'in window&&!media.matches){const io=new IntersectionObserver(items=>{items.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:.08});document.querySelectorAll('.reveal').forEach(x=>io.observe(x))}else document.querySelectorAll('.reveal').forEach(x=>x.classList.add('visible'));
-function onScroll(){let max=document.documentElement.scrollHeight-innerHeight;document.getElementById('progress').style.width=(max>0?(scrollY/max*100):0)+'%';document.getElementById('header').classList.toggle('scrolled',scrollY>40)}addEventListener('scroll',onScroll,{passive:true});onScroll();const menu=document.getElementById('menuButton'),nav=document.getElementById('nav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});nav.querySelectorAll('a').forEach(a=>a.onclick=()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')});document.addEventListener('keydown',e=>{if(e.target.matches('input,textarea,button,select'))return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){let secs=[...document.querySelectorAll('main > section')],curr=secs.reduce((best,s,i)=>Math.abs(s.getBoundingClientRect().top)<Math.abs(secs[best].getBoundingClientRect().top)?i:best,0);let next=Math.min(secs.length-1,Math.max(0,curr+(e.key==='ArrowRight'?1:-1)));secs[next].scrollIntoView({behavior:media.matches?'instant':'smooth'});}})
+const media=matchMedia('(prefers-reduced-motion: reduce)');document.querySelectorAll('.reveal').forEach(x=>x.classList.add('visible')); 
+function onScroll(){let max=document.documentElement.scrollHeight-innerHeight;document.getElementById('progress').style.width=(max>0?(scrollY/max*100):0)+'%';document.getElementById('header').classList.toggle('scrolled',scrollY>40)}addEventListener('scroll',onScroll,{passive:true});onScroll();const menu=document.getElementById('menuButton'),nav=document.getElementById('nav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});nav.querySelectorAll('a').forEach(a=>a.onclick=()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')});document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea,button,select,a,[contenteditable]')||document.querySelector('dialog[open]'))return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){let secs=[...document.querySelectorAll('main > section')],curr=secs.reduce((best,s,i)=>Math.abs(s.getBoundingClientRect().top)<Math.abs(secs[best].getBoundingClientRect().top)?i:best,0);let next=Math.min(secs.length-1,Math.max(0,curr+(e.key==='ArrowRight'?1:-1)));secs[next].scrollIntoView({behavior:media.matches?'instant':'smooth'});}})
 </script>
 <script>
 function loadProofReel(button, reelId){
@@ -205,4 +227,66 @@ function updateStagePhoto(index){
 }
 updateStagePhoto(0);
 </script>
+
+<script id="site-motion-script">
+(()=>{
+ const preference=matchMedia('(prefers-reduced-motion: reduce)');
+ const running=new Set(),byElement=new WeakMap();
+ function enter(element,{distance=20,duration=580,delay=0}={}){
+  if(!element||preference.matches||typeof element.animate!=='function')return;
+  const previous=byElement.get(element);if(previous)previous.cancel();
+  const animation=element.animate([{opacity:.12,transform:'translateY('+distance+'px)'},{opacity:1,transform:'translateY(0)'}],{duration,delay,easing:'cubic-bezier(.22,1,.36,1)',fill:'backwards'});
+  byElement.set(element,animation);running.add(animation);
+  const finish=()=>{running.delete(animation);if(byElement.get(element)===animation)byElement.delete(element)};
+  animation.addEventListener('finish',finish,{once:true});animation.addEventListener('cancel',finish,{once:true});
+ }
+ let revealObserver;
+ function stopMotion(){if(!preference.matches)return;running.forEach(a=>a.cancel());running.clear();revealObserver?.disconnect()}
+ preference.addEventListener?.('change',stopMotion);
+ const candidates=[...document.querySelectorAll('.reveal,.social-reel-heading,.social-reel')];
+ if('IntersectionObserver'in window&&!preference.matches){
+  revealObserver=new IntersectionObserver(entries=>{
+   entries.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top).forEach((entry,index)=>{
+    const element=entry.target;revealObserver.unobserve(element);
+    // Do not animate content the reader already passed or nest two transforms.
+    if(entry.boundingClientRect.bottom<96||element.parentElement.closest('.reveal'))return;
+    enter(element,{distance:element.matches('.social-reel')?16:22,delay:Math.min(index*55,165)});
+   });
+  },{threshold:.08});
+  candidates.forEach(element=>revealObserver.observe(element));
+ }
+ const stageList=document.getElementById('stageList');
+ function stageState(){stageList?.querySelectorAll('button').forEach(button=>button.setAttribute('aria-pressed',String(button.classList.contains('active'))))}
+ stageState();
+ stageList?.addEventListener('click',event=>{
+  if(!event.target.closest('button'))return;
+  stageState();
+  const detail=document.getElementById('stageDetail');
+  enter(detail.querySelector('.detail-head'),{distance:9,duration:340});
+  enter(detail.querySelector('.detail-bottom'),{distance:9,duration:380,delay:35});
+  if(!document.getElementById('eventPhoto').hidden)enter(document.getElementById('eventPhoto'),{distance:0,duration:420});
+ });
+ document.querySelectorAll('[data-model]').forEach(button=>button.addEventListener('click',()=>{
+  document.querySelectorAll('#modelContent>div').forEach((element,index)=>enter(element,{distance:10,duration:380,delay:index*35}));
+ }));
+ const navLinks=[...document.querySelectorAll('#nav a[href^="#"]')];
+ const sections=[...document.querySelectorAll('main>section[id]')];
+ function setCurrent(id){navLinks.forEach(link=>{if(link.getAttribute('href')==='#'+id)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current')})}
+ let ticking=false;
+ function trackSection(){
+  ticking=false;const marker=Math.min(innerHeight*.28,220);let current=sections[0];
+  for(const section of sections){if(section.getBoundingClientRect().top<=marker)current=section;else break}
+  setCurrent(current?.id);
+ }
+ addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(trackSection)}},{passive:true});
+ addEventListener('resize',()=>{if(!ticking){ticking=true;requestAnimationFrame(trackSection)}},{passive:true});
+ addEventListener('hashchange',trackSection);trackSection();
+ // A compact intro only runs when the hero is initially in view.
+ const hero=document.getElementById('inicio');
+ if(hero.getBoundingClientRect().bottom>96&&hero.getBoundingClientRect().top<innerHeight){
+  hero.querySelectorAll('.hero-brand,.eyebrow,h1,p,.hero-footer').forEach((element,index)=>enter(element,{distance:16,duration:700,delay:index*65}));
+ }
+})();
+</script>
+
 </body></html>
