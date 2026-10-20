@@ -108,6 +108,13 @@ h1,h2,h3,.section-title,.huge-quote,.ten-sub,.date-large,.stat strong{font-famil
 @media(max-width:620px){.has-event-photo .event-photo img{height:auto;aspect-ratio:4/3}.has-event-photo .detail-head{padding:23px 22px 0}.has-event-photo .detail-bottom{padding:0 22px 26px}.has-event-photo h3{font-size:34px;margin-bottom:20px}.has-event-photo .event-photo figcaption{padding-left:22px}.has-event-photo:before{font-size:120px}}
 </style>
 <style>.has-event-photo .event-photo img[src$="concurso-village.jpg"]{object-position:center 10%}</style>
+<style>
+.has-event-photo .event-photo:has(img[src$="concurso-village.jpg"]){isolation:isolate;background:#10231b}
+.has-event-photo .event-photo:has(img[src$="concurso-village.jpg"]):before{content:'';position:absolute;inset:-20px;background:linear-gradient(#0c1c1599,#0c1c1599),url('./concurso-village.jpg') center 35%/cover;filter:blur(16px);z-index:-1}
+.has-event-photo .event-photo img[src$="concurso-village.jpg"]{height:430px;aspect-ratio:auto;object-fit:contain;object-position:center;background:transparent;position:relative}
+.has-event-photo .event-photo:has(img[src$="concurso-village.jpg"]) figcaption{position:relative;padding:10px 24px;background:#10231b;color:#dbe4d8}
+@media(max-width:620px){.has-event-photo .event-photo img[src$="concurso-village.jpg"]{height:390px}.has-event-photo .event-photo:has(img[src$="concurso-village.jpg"]) figcaption{padding-left:22px}}
+</style>
 </head>
 <body>
 <div id="progress"></div>
