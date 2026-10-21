@@ -262,6 +262,16 @@ nav a[aria-current="location"]:after,nav a:hover:after{transform:scaleX(1)}
 .base-row>div{display:grid;grid-template-columns:96px 1fr;gap:12px}}
 @media(max-width:620px){.base-d0{padding:85px 0}.base-grid dd{font-size:11px;letter-spacing:.08em}}
 </style>
+<style id="base-mods">
+.base-mods{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;padding:30px 0;border-bottom:1px solid rgba(245,242,233,.18)}
+.base-mods-num{display:flex;align-items:baseline;gap:14px}
+.base-mods-num b{font-family:'Sans Beam','Sans Beam Body',Arial,sans-serif;font-weight:800;font-size:clamp(40px,4.4vw,66px);line-height:1;letter-spacing:-.06em;color:var(--cream)}
+.base-mods-num span{font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:#bccdc1;font-weight:700}
+.base-mods-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+.base-mods-list li{border:1px solid rgba(219,190,130,.45);color:var(--cream);padding:9px 15px;font-size:13px;font-weight:650;letter-spacing:.01em;border-radius:99px}
+@media(max-width:950px){.base-mods{grid-template-columns:1fr;gap:18px}.base-mods-list{justify-content:flex-start}}
+@media(max-width:620px){.base-mods-list{gap:8px}.base-mods-list li{font-size:12px;padding:8px 12px}}
+</style>
 </head>
 <body>
 <div id="progress"></div>
@@ -303,6 +313,12 @@ nav a[aria-current="location"]:after,nav a:hover:after{transform:scaleX(1)}
 <div><dt data-count="320">320</dt><dd>clubes e centros hípicos filiados</dd></div>
 <div><dt data-count="22">22</dt><dd>federações estaduais filiadas</dd></div>
 </dl>
+<div class="base-mods reveal">
+<div class="base-mods-num"><b>8</b><span>modalidades</span></div>
+<ul class="base-mods-list">
+<li>Salto</li><li>Adestramento</li><li>Hipismo Completo</li><li>Paraequestre</li><li>Enduro</li><li>Volteio</li><li>Atrelagem</li><li>Rédeas</li>
+</ul>
+</div>
 <div class="base-row reveal">
 <div><b>84</b><span>concursos nacionais por ano nas principais modalidades</span></div>
 <div><b>+41%</b><span>de registros ativos no 1º trimestre de 2024 sobre 2023</span></div>
