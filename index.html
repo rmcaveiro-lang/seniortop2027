@@ -231,10 +231,42 @@ nav a[aria-current="location"]:after,nav a:hover:after{transform:scaleX(1)}
 .reach-grid>div:nth-child(odd){border-left:0;padding-left:0}}
 @media(max-width:620px){.cover-block.broadcast{padding:26px 22px;gap:12px}.reach-grid>div{padding:0 0 0 18px}.reach-grid>div:nth-child(odd){padding-left:0}}
 </style>
+<style id="base-d0">
+.base-d0{background:#16392d;padding:120px 0 110px}
+.base-d0:before{content:'D0';position:absolute;right:-2vw;top:40px;font-family:'Sans Beam','Sans Beam Body',Arial,sans-serif;font-weight:800;font-size:clamp(160px,24vw,380px);line-height:.8;letter-spacing:-.08em;color:rgba(245,242,233,.04);pointer-events:none}
+.base-top{display:grid;grid-template-columns:1.1fr .9fr;gap:6vw;align-items:end}
+.base-top .section-title{margin-bottom:0}
+.base-top .section-intro{color:#c9d8cd;margin:0 0 10px}
+.base-lead{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;margin-top:76px;padding:38px 0;border-top:1px solid rgba(245,242,233,.18);border-bottom:1px solid rgba(245,242,233,.18)}
+.base-lead-num{font-family:'Sans Beam','Sans Beam Body',Arial,sans-serif;font-weight:800;font-size:clamp(72px,10vw,150px);line-height:.85;letter-spacing:-.07em;color:var(--gold);white-space:nowrap;font-variant-numeric:tabular-nums}
+.base-lead-text{display:flex;flex-direction:column;gap:10px;max-width:520px}
+.base-lead-text b{font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;line-height:1.2}
+.base-lead-text span{color:#bccdc1;font-size:15px;line-height:1.6}
+.base-grid{display:grid;grid-template-columns:repeat(4,1fr);margin:0;border-bottom:1px solid rgba(245,242,233,.18)}
+.base-grid>div{padding:34px 26px 34px 0}
+.base-grid>div+div{padding-left:26px;border-left:1px solid rgba(245,242,233,.18)}
+.base-grid dt{font-family:'Sans Beam','Sans Beam Body',Arial,sans-serif;font-weight:800;font-size:clamp(40px,4.4vw,66px);line-height:1;letter-spacing:-.06em;color:var(--cream);font-variant-numeric:tabular-nums;white-space:nowrap}
+.base-grid dd{margin:12px 0 0;font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:#bccdc1;font-weight:700;line-height:1.5}
+.base-row{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:40px}
+.base-row>div{display:flex;gap:16px;align-items:baseline}
+.base-row b{font-family:'Sans Beam','Sans Beam Body',Arial,sans-serif;font-weight:800;font-size:28px;letter-spacing:-.04em;color:var(--gold);white-space:nowrap}
+.base-row span{font-size:14px;line-height:1.5;color:#c9d8cd}
+.base-note{margin:44px 0 0;font-size:11px;line-height:1.6;color:#9fb5a6;max-width:760px}
+@media(max-width:950px){.base-top{grid-template-columns:1fr;gap:26px}
+.base-lead{grid-template-columns:1fr;gap:18px;margin-top:56px}
+.base-grid{grid-template-columns:1fr 1fr}
+.base-grid>div,.base-grid>div+div{padding:28px 0 28px 22px;border-left:1px solid rgba(245,242,233,.18)}
+.base-grid>div:nth-child(odd){padding-left:0;border-left:0}
+.base-grid>div:nth-child(-n+2){border-bottom:1px solid rgba(245,242,233,.18)}
+.base-row{grid-template-columns:1fr;gap:18px}
+.base-row>div{display:grid;grid-template-columns:96px 1fr;gap:12px}}
+@media(max-width:620px){.base-d0{padding:85px 0}.base-grid dd{font-size:11px;letter-spacing:.08em}}
+</style>
 </head>
 <body>
 <div id="progress"></div>
-<header id="header"><div class="container"><a class="identity" href="#inicio" aria-label="Voltar ao início"><img class="brand-logo" src="./logo-cbh.png" width="55" height="55" alt="Logotipo oficial CBH"><div class="brand-words"><b>CONFEDERAÇÃO BRASILEIRA DE HIPISMO</b><small>CIRCUITO SENIOR TOP 2027</small></div></a><button class="menu-button" id="menuButton" aria-expanded="false" aria-label="Abrir menu">Menu ☰</button><nav id="nav"><a href="#conceito">Conceito</a><a href="#calendario">Calendário</a><a href="#midia">Mídia</a><a href="#evidencias">Vídeos</a><a href="#comercial">Oportunidades</a><a href="#topten">TOP TEN</a><a href="#producao">Produção</a></nav></div></header>
+<header id="header"><div class="container"><a class="identity" href="#inicio" aria-label="Voltar ao início"><img class="brand-logo" src="./logo-cbh.png" width="55" height="55" alt="Logotipo oficial CBH"><div class="brand-words"><b>CONFEDERAÇÃO BRASILEIRA DE HIPISMO</b><small>CIRCUITO SENIOR TOP 2027</small></div></a><button class="menu-button" id="menuButton" aria-expanded="false" aria-label="Abrir menu">Menu ☰</button><nav id="nav"><a href="#conceito">Conceito</a><a href="#calendario">Calendário</a><a href="#midia">Mídia</a>
+<a href="#base">Base</a><a href="#evidencias">Vídeos</a><a href="#comercial">Oportunidades</a><a href="#topten">TOP TEN</a><a href="#producao">Produção</a></nav></div></header>
 <main>
 <section class="hero" id="inicio"><div class="container"><div class="eyebrow">Circuito Senior Top 2027</div><h1>O espetáculo<br>tem <em>hora</em><br>marcada.</h1><p>Uma temporada inteira de hipismo de alto nível. Um encontro recorrente entre esporte, conteúdo e audiência.</p><div class="hero-footer"><a href="#conceito" class="button gold">Conheça a proposta <span aria-hidden="true">↓</span></a><div class="hero-meta">Sábados, 15h30<br>Temporada 2027</div></div></div></section>
 <section class="section dark" id="conceito"><div class="container"><div class="eyebrow reveal">Oportunidade de mídia</div><div class="split"><div class="reveal"><h2 class="section-title">Muito além<br>de uma<br><span class="gold-text">transmissão.</span></h2><p class="section-intro">A proposta é construir, junto a um parceiro de mídia, um novo hábito de consumo esportivo: os principais Grandes Prêmios do hipismo brasileiro, com distribuição ampliada e narrativa contínua ao longo do ano.</p><ul class="feature-list"><li><span>01</span> Calendário recorrente e previsível</li><li><span>02</span> Conteúdo para TV, streaming e redes sociais</li><li><span>03</span> Crescimento de audiência como prioridade inicial</li><li><span>04</span> Estrutura comercial escalável a médio prazo</li></ul></div><div class="visual reveal"><div class="photo"></div><div class="visual-caption">SOCIEDADE HÍPICA PAULISTA, SÃO PAULO</div></div></div><div class="stats reveal"><div class="stat prize-stat"><strong>R$ 3 mi</strong><small>Premiação total aprovada</small><span class="prize-breakdown">10 etapas de R$ 300 mil cada</span></div><div class="stat"><strong>10</strong><small>Etapas do circuito</small></div><div class="stat"><strong>01</strong><small>TOP TEN especial</small></div><div class="stat"><strong>15h30</strong><small>Horário fixo aos sábados</small></div><div class="stat"><strong>2027</strong><small>Abril a dezembro</small></div></div></div></section>
@@ -254,6 +286,31 @@ nav a[aria-current="location"]:after,nav a:hover:after{transform:scaleX(1)}
 <p>Histórico BandSports, audiência das lives, visualizações, retenção, simultâneos e alcance dos conteúdos derivados.</p>
 </div>
 </div><figure class="podium-photo reveal"><img src="./midia-salto-noturno.jpg" loading="lazy" alt="Cavaleiro competindo em pista de salto"><figcaption>Registros reais de competições do hipismo brasileiro, imagens fornecidas para esta proposta.</figcaption></figure></div></section>
+<section class="section base-d0" id="base">
+<div class="container">
+<div class="eyebrow reveal">Base consolidada · D0</div>
+<div class="base-top">
+<h2 class="section-title reveal">O circuito<br>já nasce com<br><span class="gold-text">torcida.</span></h2>
+<p class="section-intro reveal">Antes da primeira transmissão, o Senior Top parte de uma comunidade organizada: atletas, proprietários, clubes e federações que já vivem o hipismo toda semana. É uma base de audiência e de relacionamento disponível desde o dia zero.</p>
+</div>
+<div class="base-lead reveal">
+<div class="base-lead-num"><span data-count="38000" data-format="mil">38 mil</span></div>
+<div class="base-lead-text"><b>contatos qualificados na base</b><span>Atletas, proprietários, treinadores, oficiais e dirigentes com cadastro ativo no sistema da CBH e das federações.</span></div>
+</div>
+<dl class="base-grid reveal">
+<div><dt data-count="11200">11.200</dt><dd>atletas com registro ativo</dd></div>
+<div><dt data-count="14500">14.500</dt><dd>cavalos registrados</dd></div>
+<div><dt data-count="320">320</dt><dd>clubes e centros hípicos filiados</dd></div>
+<div><dt data-count="22">22</dt><dd>federações estaduais filiadas</dd></div>
+</dl>
+<div class="base-row reveal">
+<div><b>84</b><span>concursos nacionais por ano nas principais modalidades</span></div>
+<div><b>+41%</b><span>de registros ativos no 1º trimestre de 2024 sobre 2023</span></div>
+<div><b>60 mil</b><span>seguidores da CBH nas redes, com 13 milhões de visualizações</span></div>
+</div>
+<p class="base-note">Valores de contatos, atletas, cavalos e clubes são ilustrativos e estão em validação com a CBH. Federações, concursos, crescimento de registros e redes têm base em dados oficiais da CBH.</p>
+</div>
+</section>
 <section class="section video-proof" id="evidencias"><div class="container"><div class="social-reel-heading"><div><div class="eyebrow">Vídeos</div><h2>Nas redes</h2></div><p>Seis registros da CBH no Instagram. Esporte, bastidores e momentos que levam o hipismo a novos públicos.</p></div><div class="social-reel-grid" aria-label="Vídeos da CBH no Instagram"><article class="social-reel"><img class="social-reel-cover" src="./reel-01.jpg" loading="lazy" alt="Capa do Reel 01 da CBH"><button class="social-reel-play" type="button" onclick="openProofReel(this,'Dby0RJCNaFl')" aria-label="Reproduzir Reel 01"><span aria-hidden="true">▶</span></button><div class="social-reel-caption"><span>@cbhoficial</span><a href="https://www.instagram.com/reel/Dby0RJCNaFl/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Reel 01 no Instagram">REEL <span aria-hidden="true">↗</span></a></div></article><article class="social-reel"><img class="social-reel-cover" src="./reel-02.jpg" loading="lazy" alt="Capa do Reel 02 da CBH"><button class="social-reel-play" type="button" onclick="openProofReel(this,'DbtSojzNOKt')" aria-label="Reproduzir Reel 02"><span aria-hidden="true">▶</span></button><div class="social-reel-caption"><span>@cbhoficial</span><a href="https://www.instagram.com/reel/DbtSojzNOKt/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Reel 02 no Instagram">REEL <span aria-hidden="true">↗</span></a></div></article><article class="social-reel"><img class="social-reel-cover" src="./reel-03.jpg" loading="lazy" alt="Capa do Reel 03 da CBH"><button class="social-reel-play" type="button" onclick="openProofReel(this,'DZ0z2wuNphG')" aria-label="Reproduzir Reel 03"><span aria-hidden="true">▶</span></button><div class="social-reel-caption"><span>@cbhoficial</span><a href="https://www.instagram.com/reel/DZ0z2wuNphG/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Reel 03 no Instagram">REEL <span aria-hidden="true">↗</span></a></div></article><article class="social-reel"><img class="social-reel-cover" src="./reel-04.jpg" loading="lazy" alt="Capa do Reel 04 da CBH"><button class="social-reel-play" type="button" onclick="openProofReel(this,'DZvHKZaNPQv')" aria-label="Reproduzir Reel 04"><span aria-hidden="true">▶</span></button><div class="social-reel-caption"><span>@cbhoficial</span><a href="https://www.instagram.com/reel/DZvHKZaNPQv/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Reel 04 no Instagram">REEL <span aria-hidden="true">↗</span></a></div></article><article class="social-reel"><img class="social-reel-cover" src="./reel-05.jpg" loading="lazy" alt="Capa do Reel 05 da CBH"><button class="social-reel-play" type="button" onclick="openProofReel(this,'DZSI5n6tvV1')" aria-label="Reproduzir Reel 05"><span aria-hidden="true">▶</span></button><div class="social-reel-caption"><span>@cbhoficial</span><a href="https://www.instagram.com/reel/DZSI5n6tvV1/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Reel 05 no Instagram">REEL <span aria-hidden="true">↗</span></a></div></article><article class="social-reel"><img class="social-reel-cover" src="./reel-06.jpg" loading="lazy" alt="Capa do Reel 06 da CBH"><button class="social-reel-play" type="button" onclick="openProofReel(this,'DZQL_EwNOdh')" aria-label="Reproduzir Reel 06"><span aria-hidden="true">▶</span></button><div class="social-reel-caption"><span>@cbhoficial</span><a href="https://www.instagram.com/reel/DZQL_EwNOdh/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Reel 06 no Instagram">REEL <span aria-hidden="true">↗</span></a></div></article></div><p class="video-proof-note">Assista pelo botão de reprodução ou abra o Reel no Instagram. A reprodução depende da disponibilidade de cada publicação na plataforma.</p></div></section>
 <dialog id="proofReelDialog" class="reel-dialog" aria-labelledby="proofReelTitle"><div class="reel-dialog-header"><h2 id="proofReelTitle">Reel da CBH</h2><button type="button" onclick="document.getElementById('proofReelDialog').close()" aria-label="Fechar vídeo">✕</button></div><div id="proofReelPlayer"></div><a id="proofReelOriginal" target="_blank" rel="noopener noreferrer">Abrir no Instagram ↗</a></dialog>
 <section class="section dark" id="comercial"><div class="container"><div class="eyebrow reveal">Potencial de monetização</div><h2 class="section-title reveal">Primeiro,<br><span class="gold-text">audiência.</span><br>Depois, escala.</h2><p class="section-intro reveal">O primeiro objetivo é distribuir o Senior Top para mais pessoas. Com audiência recorrente e dados consistentes, o circuito poderá ampliar sua capacidade de monetização em diferentes frentes.</p><div class="products"><div class="product reveal"><span class="id">01 / MÍDIA</span><div><h3>Publicidade na transmissão</h3><p>Oferecimento, vinhetas, quadros patrocinados e inserções, conforme o inventário negociado.</p></div></div><div class="product reveal"><span class="id">02 / DIGITAL</span><div><h3>Conteúdo de marca</h3><p>Formatos nativos, cortes, entrevistas, especiais e distribuição editorial multicanal.</p></div></div><div class="product reveal"><span class="id">03 / CIRCUITO</span><div><h3>Patrocínio da temporada</h3><p>Naming rights, visibilidade institucional, branding presencial e relacionamento.</p></div></div><div class="product reveal"><span class="id">04 / EVENTO</span><div><h3>TOP TEN</h3><p>Experiência final de temporada com posicionamento e pacotes de parceria próprios.</p></div></div></div><p class="small-note" style="margin-top:26px">Inventário ilustrativo. Direitos de exploração, reservas comerciais, exclusividades e valores dependem de negociação entre a CBH, organizadores e emissora.</p><div class="photo-triptych reveal"><figure><img src="./triptico-competicao.jpg" loading="lazy" alt="Salto em prova diurna"><figcaption>COMPETIÇÃO</figcaption></figure><figure><img src="./triptico-conteudo.jpg" loading="lazy" alt="Conjunto saltando um obstáculo colorido"><figcaption>CONTEÚDO</figcaption></figure><figure><img src="./triptico-relacionamento.jpg" loading="lazy" alt="Premiação noturna de hipismo"><figcaption>RELACIONAMENTO</figcaption></figure></div></div></section>
@@ -399,5 +456,12 @@ updateStagePhoto(0);
 <script id="polish-2026-js">
 (()=>{const list=document.getElementById('stageList'),detail=document.getElementById('stageDetail');const narrow=matchMedia('(max-width:950px)'),calm=matchMedia('(prefers-reduced-motion: reduce)');
 list?.addEventListener('click',e=>{if(!e.target.closest('button')||!narrow.matches)return;const r=detail.getBoundingClientRect();if(r.top<90||r.top>innerHeight*.6)detail.scrollIntoView({behavior:calm.matches?'auto':'smooth',block:'start'})});})();
+</script>
+<script id="base-d0-js">
+(()=>{const els=[...document.querySelectorAll('#base [data-count]')];if(!els.length||matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver'in window))return;
+const fmt=(n,el)=>el.dataset.format==='mil'?Math.round(n/1000)+' mil':Math.round(n).toLocaleString('pt-BR');
+const run=el=>{const to=+el.dataset.count,final=el.textContent,t0=performance.now(),d=1400;el.style.minWidth=el.offsetWidth+'px';
+const step=t=>{const p=Math.min(1,(t-t0)/d),e=1-Math.pow(1-p,4);el.textContent=p<1?fmt(to*e,el):final;if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){io.unobserve(e.target);run(e.target)}}),{threshold:.4});els.forEach(el=>io.observe(el));})();
 </script>
 </body></html>
