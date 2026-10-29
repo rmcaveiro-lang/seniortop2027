@@ -363,17 +363,301 @@ nav a[aria-current="location"]:after,nav a:hover:after{transform:scaleX(1)}
 <div class="reach">
 <div class="reach-head"><div class="eyebrow">Base institucional</div><h3>CBH nas redes</h3></div>
 <dl class="reach-grid">
-<div><dt>60 mil</dt><dd>seguidores</dd></div>
+<div><dt>61 mil</dt><dd>seguidores</dd></div>
 <div><dt>13 mi</dt><dd>visualizações</dd></div>
 <div><dt>528 mil</dt><dd>interações</dd></div>
 <div><dt>87 mil</dt><dd>visitas ao perfil</dd></div>
 </dl>
+<a class="reach-ecosystem-link" href="#ecossistema">Explorar o ecossistema nas redes <span aria-hidden="true">&nbsp;→</span></a>
 </div>
 <div class="cover-block broadcast">
 <h3>Performance de transmissão</h3>
 <p>Histórico BandSports, audiência das lives, visualizações, retenção, simultâneos e alcance dos conteúdos derivados.</p>
 </div>
-</div><figure class="podium-photo reveal"><img src="./midia-salto-noturno.jpg" loading="lazy" alt="Cavaleiro competindo em pista de salto"><figcaption>Registros reais de competições do hipismo brasileiro, imagens fornecidas para esta proposta.</figcaption></figure></div></section>
+</div>
+<section class="eco" id="ecossistema" aria-labelledby="eco-titulo">
+  <style>
+    .eco{
+      --eco-bg:#f1efe8; --eco-ink:#1b2a22; --eco-green:#2d6a4a; --eco-green-2:#4f8c69;
+      --eco-green-3:#8fb9a0; --eco-green-4:#c9dccf; --eco-muted:#5b6b62; --eco-line:#d6d9d0;
+      --eco-card:#f7f6f1;
+      background:var(--eco-bg); color:var(--eco-ink);
+      font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+      padding:56px 16px; box-sizing:border-box;
+    }
+    .eco *{box-sizing:border-box}
+    .eco .eco-wrap{max-width:1080px;margin:0 auto;border-top:1px solid var(--eco-line);border-bottom:1px solid var(--eco-line);padding:40px 0}
+    .eco .eco-kicker{font-size:12px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--eco-green);margin:0 0 12px}
+    .eco .eco-title{font-size:clamp(28px,4vw,40px);font-weight:900;letter-spacing:-.02em;line-height:1.05;margin:0 0 10px}
+    .eco .eco-lead{font-size:16px;line-height:1.5;color:var(--eco-muted);max-width:640px;margin:0 0 28px}
+
+    /* Abas */
+    .eco .eco-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px}
+    .eco .eco-tab{appearance:none;border:1px solid var(--eco-line);background:transparent;color:var(--eco-ink);
+      font-size:12px;font-weight:700;line-height:1;font-family:inherit;letter-spacing:.14em;text-transform:uppercase;padding:12px 16px;border-radius:999px;cursor:pointer;transition:all .2s}
+    .eco .eco-tab:hover{border-color:var(--eco-green)}
+    .eco .eco-tab[aria-selected="true"]{background:var(--eco-green);border-color:var(--eco-green);color:#fff}
+    .eco .eco-panel[hidden]{display:none}
+    .eco .eco-panel{animation:ecoIn .35s ease}
+    @keyframes ecoIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+    /* Visão geral */
+    .eco .eco-hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:end;margin-bottom:32px}
+    .eco .eco-big{font-size:clamp(64px,10vw,112px);font-weight:900;letter-spacing:-.04em;line-height:.9;color:var(--eco-green);margin:0}
+    .eco .eco-big-label{font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-top:12px}
+    .eco .eco-compare{font-size:15px;line-height:1.5;color:var(--eco-muted);margin:0}
+    .eco .eco-compare strong{color:var(--eco-ink)}
+    .eco .eco-mult{display:inline-block;font-weight:900;font-size:28px;color:var(--eco-green);margin-bottom:4px}
+
+    .eco .eco-stack{display:flex;height:14px;border-radius:999px;overflow:hidden;background:var(--eco-line);margin-bottom:28px}
+    .eco .eco-stack span{height:100%;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+
+    .eco .eco-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+    .eco .eco-card{appearance:none;text-align:left;background:transparent;border:0;border-left:1px solid var(--eco-line);padding:4px 20px 4px 20px;cursor:pointer;font-family:inherit;color:inherit}
+    .eco .eco-card:first-child{border-left:0;padding-left:0}
+    .eco .eco-card:hover .eco-card-n{color:var(--eco-green-2)}
+    .eco .eco-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:middle}
+    .eco .eco-card-n{font-size:clamp(30px,4vw,44px);font-weight:900;letter-spacing:-.03em;color:var(--eco-green);line-height:1;margin:10px 0 8px;transition:color .2s}
+    .eco .eco-card-l{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+    .eco .eco-card-s{font-size:13px;color:var(--eco-muted);margin-top:6px}
+    .eco .eco-card-go{font-size:12px;font-weight:700;color:var(--eco-green);margin-top:10px;letter-spacing:.06em}
+
+    /* Listas */
+    .eco .eco-listhead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+    .eco .eco-listtotal{font-size:40px;font-weight:900;color:var(--eco-green);letter-spacing:-.03em}
+    .eco .eco-listmeta{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--eco-muted)}
+    .eco .eco-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--eco-line)}
+    .eco .eco-row{display:grid;grid-template-columns:28px minmax(0,1.4fr) minmax(0,1.6fr) 96px;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--eco-line)}
+    .eco .eco-rank{font-size:12px;font-weight:700;color:var(--eco-muted)}
+    .eco .eco-name{font-weight:800;font-size:15px;line-height:1.2}
+    .eco .eco-sub{font-size:12px;color:var(--eco-muted);margin-top:3px}
+    .eco .eco-sub a{color:var(--eco-green);text-decoration:none;font-weight:700}
+    .eco .eco-sub a:hover{text-decoration:underline}
+    .eco .eco-bar{height:8px;background:var(--eco-card);border-radius:999px;overflow:hidden}
+    .eco .eco-bar i{display:block;height:100%;background:var(--eco-green);border-radius:999px;width:0;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+    .eco .eco-val{text-align:right;font-weight:900;font-size:16px;font-variant-numeric:tabular-nums}
+
+    /* Metodologia */
+    .eco .eco-method{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .eco .eco-method h3{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--eco-green);margin:0 0 10px}
+    .eco .eco-method p{font-size:14px;line-height:1.55;color:var(--eco-muted);margin:0}
+    .eco .eco-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:28px;font-size:12px;color:var(--eco-muted)}
+    .eco .eco-foot b{color:var(--eco-ink)}
+
+    @media (max-width:760px){
+      .eco .eco-hero{grid-template-columns:1fr;gap:20px}
+      .eco .eco-cards{grid-template-columns:1fr 1fr;row-gap:28px}
+      .eco .eco-card:nth-child(3){border-left:0;padding-left:0}
+      .eco .eco-row{grid-template-columns:22px minmax(0,1fr) 84px}
+      .eco .eco-row .eco-bar{grid-column:2 / 4;grid-row:2}
+      .eco .eco-method{grid-template-columns:1fr}
+    }
+    @media (prefers-reduced-motion:reduce){.eco *{animation:none!important;transition:none!important}}
+
+    /* Integrado à base institucional da apresentação. */
+    #midia .eco{background:transparent;font-family:inherit;padding:0;margin-top:46px;scroll-margin-top:98px;overflow:visible}
+    #midia .eco .eco-wrap{max-width:none;padding:42px 0;margin:0}
+    #midia .eco .eco-title{font-family:inherit;font-size:clamp(32px,4.3vw,58px);letter-spacing:-.045em;line-height:1.05;max-width:800px;margin-bottom:18px}
+    #midia .eco .eco-lead{max-width:880px;font-size:17px;line-height:1.6}
+    #midia .eco .eco-tab:focus-visible,#midia .eco .eco-card:focus-visible,#midia .eco a:focus-visible{outline:3px solid var(--eco-green);outline-offset:4px}
+    #midia .eco .eco-sub{overflow-wrap:anywhere}
+    #midia .eco .eco-summary-note{font-size:12px;line-height:1.6;max-width:840px;color:var(--eco-muted);margin:26px 0 0}
+    #midia .eco .eco-foot{margin-top:14px;line-height:1.5}
+    #midia .eco .eco-panel:focus-visible{outline:2px solid var(--eco-green);outline-offset:6px}
+    .reach-ecosystem-link{display:inline-flex;margin-top:22px;color:#2d6a4a;font-weight:700;font-size:13px;text-decoration:none;border-bottom:1px solid #2d6a4a55;padding-bottom:4px}
+    .reach-ecosystem-link:hover{border-color:currentColor}
+    @media(max-width:620px){#midia .eco .eco-wrap{padding:30px 0}.eco .eco-cards{column-gap:12px}.eco .eco-card{padding-right:0;padding-left:12px}.eco .eco-card-l{letter-spacing:.09em;font-size:11px}.eco .eco-big{font-size:76px}.eco .eco-tab{padding:12px;font-size:11px}.eco .eco-row{gap:10px}.eco .eco-name{font-size:14px}}
+
+  </style>
+
+  <div class="eco-wrap">
+    <p class="eco-kicker">Alcance do ecossistema</p>
+    <h3 class="eco-title" id="eco-titulo">O hipismo brasileiro nas redes</h3>
+    <p class="eco-lead">Além da base própria da CBH, o Circuito Senior Top conecta federações estaduais, os principais comitês organizadores do país e atletas de elite. O levantamento reúne as bases desses perfis para dimensionar a presença do esporte nas redes.</p>
+
+    <div class="eco-tabs" role="tablist" aria-label="Navegação do ecossistema">
+      <button class="eco-tab" role="tab" aria-selected="true" aria-controls="eco-p-geral" id="eco-t-geral">Visão geral</button>
+      <button class="eco-tab" role="tab" aria-selected="false" aria-controls="eco-p-fed" id="eco-t-fed">Federações</button>
+      <button class="eco-tab" role="tab" aria-selected="false" aria-controls="eco-p-com" id="eco-t-com">Comitês</button>
+      <button class="eco-tab" role="tab" aria-selected="false" aria-controls="eco-p-atl" id="eco-t-atl">Atletas</button>
+      <button class="eco-tab" role="tab" aria-selected="false" aria-controls="eco-p-met" id="eco-t-met">Metodologia</button>
+    </div>
+
+    <!-- VISÃO GERAL -->
+    <div class="eco-panel" role="tabpanel" tabindex="0" id="eco-p-geral" aria-labelledby="eco-t-geral">
+      <div class="eco-hero">
+        <div>
+          <p class="eco-big" data-eco="total">917 mil</p>
+          <div class="eco-big-label">Seguidores no ecossistema</div>
+        </div>
+        <div>
+          <span class="eco-mult" data-eco="mult">15x</span>
+          <p class="eco-compare">a base institucional da CBH. São <strong data-eco="perfis">41 perfis oficiais</strong> no Instagram, presentes em <strong>19 unidades federativas</strong> e nas modalidades de salto, adestramento e CCE.</p>
+        </div>
+      </div>
+      <div class="eco-stack" data-eco="stack" aria-hidden="true"></div>
+      <div class="eco-cards" data-eco="cards"></div>
+    </div>
+
+    <!-- LISTAS -->
+    <div class="eco-panel" role="tabpanel" tabindex="0" id="eco-p-fed" aria-labelledby="eco-t-fed" hidden data-group="fed"></div>
+    <div class="eco-panel" role="tabpanel" tabindex="0" id="eco-p-com" aria-labelledby="eco-t-com" hidden data-group="com"></div>
+    <div class="eco-panel" role="tabpanel" tabindex="0" id="eco-p-atl" aria-labelledby="eco-t-atl" hidden data-group="atl"></div>
+
+    <!-- METODOLOGIA -->
+    <div class="eco-panel" role="tabpanel" tabindex="0" id="eco-p-met" aria-labelledby="eco-t-met" hidden>
+      <div class="eco-method">
+        <div>
+          <h3>Fonte</h3>
+          <p>Contagem pública de seguidores exibida nos perfis oficiais do Instagram de cada entidade e atleta. Os links nas abas levam aos perfis de origem para conferência.</p>
+        </div>
+        <div>
+          <h3>Critério</h3>
+          <p>Federações filiadas à CBH com perfil oficial ativo, comitês organizadores com calendário nacional e internacional, e atletas brasileiros de destaque no salto, adestramento e CCE.</p>
+        </div>
+        <div>
+          <h3>Leitura</h3>
+          <p>O total representa a audiência combinada do ecossistema, isto é, a soma das bases de cada perfil. Um mesmo usuário pode seguir mais de um perfil, por isso o número não representa público único nem alcance garantido.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="eco-summary-note">Soma das bases dos perfis mapeados. Os seguidores podem se sobrepor entre perfis; o total não representa público único nem alcance garantido.</p>
+    <div class="eco-foot">
+      <span>Coleta: <b>29 de outubro de 2026</b> · Instagram, perfis públicos</span>
+      <span>Valores acima de 10 mil arredondados conforme exibição da plataforma</span>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var root=document.getElementById('ecossistema'); if(!root) return;
+
+    var DATA={
+      cbh:{nome:'CBH | Confederação Brasileira de Hipismo',handle:'cbhoficial',n:61000},
+      fed:{titulo:'Federações estaduais',cor:'#2d6a4a',itens:[
+        ['Federação Paulista de Hipismo','SP','fph_oficial',32000],
+        ['Federação Hípica de Brasília','DF','fhbr_hipismo',9665],
+        ['Federação Paranaense de Hipismo','PR','fprh_oficial',8502],
+        ['Federação Hípica de Minas Gerais','MG','fhmgoficial',6713],
+        ['Federação Equestre do Rio de Janeiro','RJ','feerj.oficial',6647],
+        ['Federação Catarinense de Hipismo','SC','fch.oficial',5054],
+        ['Federação Equestre de Pernambuco','PE','federacaoequestrepe',4913],
+        ['Federação Equestre do Ceará','CE','hipismoceara',3481],
+        ['Federação Gaúcha dos Esportes Equestres','RS','fgee_',3262],
+        ['Federação MS Equestre','MS','msequestreoficial',1952],
+        ['Federação Hípica de Mato Grosso','MT','fhimt_oficial',1948],
+        ['Federação Amazonense de Hipismo','AM','federacaoamazonensedehipismo',1665],
+        ['Federação Hípica da Bahia','BA','fhbahia',1210],
+        ['Federação Equestre do Maranhão','MA','feemequestre',1029],
+        ['Federação Equestre Paraibana','PB','fedequestrepb',1015],
+        ['Federação Hípica de Goiás','GO','fehgo.br',671],
+        ['Federação Equestre de Alagoas','AL','fea__oficial',576],
+        ['Federação Hípica do Espírito Santo','ES','fhes_oficial',434],
+        ['Federação Hípica de Sergipe','SE','fhse.oficial',157]
+      ]},
+      com:{titulo:'Comitês organizadores',cor:'#4f8c69',itens:[
+        ['Sociedade Hípica Paulista','SHP · São Paulo','sociedadehipicapaulista',55000],
+        ['Sociedade Hípica de Campinas','Campinas','hipicaoficial',40000],
+        ['Clube Hípico de Santo Amaro','CHSA · São Paulo','chsa_oficial',37000],
+        ['Sociedade Hípica Brasileira','SHB · Rio de Janeiro','shbrj',21000],
+        ['Sociedade Hípica Paranaense','SHPR · Curitiba','hipicaparanaense',15000],
+        ['Sociedade Hípica Porto Alegrense','SHPA · Porto Alegre','shpaoficial',7498],
+        ['Sociedade Hípica de Brasília','SHBr · Brasília','sociedadehipicadebrasilia',4185],
+        ['Hípica Helvetia','Helvetia · SP','hipicahelvetia',2399]
+      ]},
+      atl:{titulo:'Atletas de elite',cor:'#8fb9a0',itens:[
+        ['Doda Miranda','Salto','dodamiranda',328000],
+        ['João Victor Marcari Oliva','Adestramento','joaov_oliva',89000],
+        ['Yuri Mansur','Salto','yurimansurguerios',42000],
+        ['Marlon Zanotelli','Salto','marlonzanotelli',35000],
+        ['Stephan Barcha','Salto','stephanbarcha',24000],
+        ['Pedro Veniss','Salto','pedroveniss',21000],
+        ['Bernardo Alves','Salto','ctbernardoalves',11000],
+        ['Ruy Fonseca','CCE','ruyfonseca',8818],
+        ['Pedro Junqueira Muylaert','Salto','pepemuylaert',7906],
+        ['Thiago Rhavy','Salto','thiagorhavy',5417],
+        ['Carlos Parro','CCE','carlos_parro_bra',4321],
+        ['Rodrigo Lambre','Salto','rodrigolambre',3278],
+        ['Felipe Amaral','Salto','felipegamaral',3258]
+      ]}
+    };
+
+    var fmt=function(n){return n.toLocaleString('pt-BR')};
+    var mil=function(n){return n>=1e6?(n/1e6).toFixed(1).replace('.',',')+' mi':Math.round(n/1000)+' mil'};
+    var soma=function(a){return a.reduce(function(s,i){return s+i[3]},0)};
+    var ig=function(h){return 'https://www.instagram.com/'+h+'/'};
+
+    var grupos=['fed','com','atl'];
+    var tot={cbh:DATA.cbh.n}; grupos.forEach(function(g){tot[g]=soma(DATA[g].itens)});
+    var total=tot.cbh+tot.fed+tot.com+tot.atl;
+    var perfis=1+grupos.reduce(function(s,g){return s+DATA[g].itens.length},0);
+
+    root.querySelector('[data-eco="total"]').textContent=mil(total);
+    root.querySelector('[data-eco="mult"]').textContent=Math.round(total/tot.cbh)+'x';
+    root.querySelector('[data-eco="perfis"]').textContent=perfis+' perfis oficiais';
+
+    // barra de composição + cards
+    var blocos=[
+      {k:'cbh',label:'CBH',sub:'Base institucional',cor:'#1b2a22',n:tot.cbh,qtd:1,link:ig(DATA.cbh.handle)},
+      {k:'fed',label:'Federações',sub:DATA.fed.itens.length+' UFs',cor:DATA.fed.cor,n:tot.fed},
+      {k:'com',label:'Comitês',sub:DATA.com.itens.length+' organizadores',cor:DATA.com.cor,n:tot.com},
+      {k:'atl',label:'Atletas',sub:DATA.atl.itens.length+' atletas de elite',cor:DATA.atl.cor,n:tot.atl}
+    ];
+    var stack=root.querySelector('[data-eco="stack"]');
+    var cards=root.querySelector('[data-eco="cards"]');
+    blocos.forEach(function(b){
+      var s=document.createElement('span'); s.style.background=b.cor; s.style.width='0'; s.title=b.label+': '+fmt(b.n);
+      stack.appendChild(s); setTimeout(function(){s.style.width=(b.n/total*100)+'%'},120);
+      var c=document.createElement(b.k==='cbh'?'a':'button');
+      c.className='eco-card';
+      if(b.k==='cbh'){c.href=b.link;c.target='_blank';c.rel='noopener';c.style.textDecoration='none'}
+      else{c.type='button';c.addEventListener('click',function(){abrir('eco-t-'+b.k);root.querySelector('#eco-t-'+b.k).focus()})}
+      c.innerHTML='<div class="eco-card-l"><span class="eco-dot" style="background:'+b.cor+'"></span>'+b.label+'</div>'+
+        '<div class="eco-card-n">'+mil(b.n)+'</div>'+
+        '<div class="eco-card-s">'+b.sub+' · '+Math.round(b.n/total*100)+'%</div>'+
+        '<div class="eco-card-go">'+(b.k==='cbh'?'Ver perfil ↗':'Ver detalhamento →')+'</div>';
+      cards.appendChild(c);
+    });
+
+    // painéis de lista
+    grupos.forEach(function(g){
+      var p=root.querySelector('[data-group="'+g+'"]'); var d=DATA[g]; var max=d.itens[0][3];
+      var html='<div class="eco-listhead"><div><div class="eco-listmeta">'+d.titulo+' · '+d.itens.length+' perfis</div></div>'+
+               '<div class="eco-listtotal">'+mil(tot[g])+'</div></div><ol class="eco-list">';
+      d.itens.forEach(function(it,i){
+        html+='<li class="eco-row"><span class="eco-rank">'+String(i+1).padStart(2,'0')+'</span>'+
+          '<div><div class="eco-name">'+it[0]+'</div><div class="eco-sub">'+it[1]+' · <a href="'+ig(it[2])+'" target="_blank" rel="noopener">@'+it[2]+' ↗</a></div></div>'+
+          '<div class="eco-bar"><i data-w="'+(it[3]/max*100)+'"></i></div>'+
+          '<div class="eco-val">'+fmt(it[3])+'</div></li>';
+      });
+      p.innerHTML=html+'</ol>';
+    });
+
+    // abas
+    var tabs=[].slice.call(root.querySelectorAll('.eco-tab'));
+    function abrir(id){
+      tabs.forEach(function(t){
+        var on=t.id===id; t.setAttribute('aria-selected',on); t.tabIndex=on?0:-1;
+        var panel=document.getElementById(t.getAttribute('aria-controls')); panel.hidden=!on;
+        if(on){[].forEach.call(panel.querySelectorAll('.eco-bar i'),function(b){b.style.width='0';setTimeout(function(){b.style.width=b.getAttribute('data-w')+'%'},40)})}
+      });
+    }
+    tabs.forEach(function(t,i){
+      t.tabIndex=i===0?0:-1;
+      t.addEventListener('click',function(){abrir(t.id)});
+      t.addEventListener('keydown',function(e){
+        if(['ArrowRight','ArrowLeft','Home','End'].indexOf(e.key)!==-1){
+          e.preventDefault();
+          var pos=e.key==='Home'?0:e.key==='End'?tabs.length-1:(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length;
+          var n=tabs[pos]; n.focus(); abrir(n.id);
+        }
+      });
+    });
+  })();
+  </script>
+</section>
+<figure class="podium-photo reveal"><img src="./midia-salto-noturno.jpg" loading="lazy" alt="Cavaleiro competindo em pista de salto"><figcaption>Registros reais de competições do hipismo brasileiro, imagens fornecidas para esta proposta.</figcaption></figure></div></section>
 <section class="section base-d0" id="base">
 <div class="container">
 <div class="eyebrow reveal">Base consolidada · D0</div>
@@ -400,7 +684,7 @@ nav a[aria-current="location"]:after,nav a:hover:after{transform:scaleX(1)}
 <div class="base-row reveal">
 <div><b>84</b><span>concursos nacionais por ano nas principais modalidades</span></div>
 <div><b>+41%</b><span>de registros ativos no 1º trimestre de 2024 sobre 2023</span></div>
-<div><b>60 mil</b><span>seguidores da CBH nas redes, com 13 milhões de visualizações</span></div>
+<div><b>61 mil</b><span>seguidores da CBH nas redes, com 13 milhões de visualizações</span></div>
 </div>
 <p class="base-note">Valores de contatos, atletas, cavalos e clubes são ilustrativos e estão em validação com a CBH. Federações, concursos, crescimento de registros e redes têm base em dados oficiais da CBH.</p>
 </div>
