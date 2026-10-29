@@ -294,15 +294,71 @@ nav a[aria-current="location"]:after,nav a:hover:after{transform:scaleX(1)}
 .by-light b{font-family:'Marcellus',serif;font-weight:400;letter-spacing:.2em;color:var(--cream);margin-left:6px;transition:color .25s}
 .by-light:hover,.by-light:hover b{color:var(--gold)}
 </style>
+
+<style id="programa-demo-css">
+#programa{background:radial-gradient(ellipse at 90% 0%,#234937 0%,transparent 50%),#0c1c15;scroll-margin-top:78px}
+.program-heading{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:end;margin-bottom:42px}
+#programa .section-title{font-size:clamp(46px,6.2vw,86px);margin-bottom:0}
+#programa .section-intro{font-size:clamp(16px,1.7vw,20px);margin:0 0 5px;max-width:520px}
+.program-player{margin:0;border:1px solid #dbbe8240;border-radius:10px;overflow:hidden;background:#08110d;box-shadow:0 24px 70px #0004}
+.program-bar{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:17px 23px;border-bottom:1px solid var(--line);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.program-bar strong{color:var(--gold);font-size:11px;letter-spacing:.14em}
+.program-screen{position:relative;aspect-ratio:16/9;background:#06100b}
+.program-screen video{display:block;width:100%;height:100%;object-fit:contain;background:#06100b}
+.program-start{position:absolute;right:5%;bottom:13%;display:flex;align-items:center;gap:13px;border:1px solid #f5f2e955;border-radius:99px;padding:12px 21px 12px 12px;background:#e2c58e;color:#10241d;cursor:pointer;box-shadow:0 8px 30px #0005;font-weight:700;font-size:13px;transition:transform .2s,background .2s}
+.program-start[hidden]{display:none}.program-start:hover{background:#f5f2e9;transform:translateY(-2px)}
+.program-start svg{width:37px;height:37px;padding:10px;border:1px solid #17322544;border-radius:50%;fill:currentColor}
+.program-caption{padding:19px 23px;display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--muted);font-size:13px;line-height:1.5}
+.program-caption a{color:var(--gold);font-size:12px;text-decoration:none;white-space:nowrap}.program-caption a:hover{text-decoration:underline}
+.program-error{margin:0;padding:14px 23px;color:#fff0d8;background:#473c27;font-size:14px;line-height:1.5}.program-error[hidden]{display:none}.program-error a{font-weight:bold}
+.program-chapters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:23px}
+.program-chapter{display:block;text-align:left;color:var(--cream);background:transparent;border:1px solid var(--line);border-radius:6px;padding:25px;cursor:pointer;transition:background .2s,border-color .2s}
+.program-chapter:hover{background:#244333;border-color:#dbbe8277}.program-chapter[aria-current="true"]{background:#1b3628;border-color:var(--gold)}
+.program-chapter .chapter-time{display:flex;justify-content:space-between;gap:15px;font-size:11px;letter-spacing:.09em;color:var(--gold);font-variant-numeric:tabular-nums}
+.program-chapter strong{display:block;font-size:20px;margin:18px 0 9px;letter-spacing:-.02em}.program-chapter .chapter-copy{display:block;font-size:14px;line-height:1.55;color:var(--muted);max-width:340px}
+#programa .program-note{margin:22px 0 0;font-size:12px;color:#a4b8aa;line-height:1.6;max-width:860px}
+#programa button:focus-visible,#programa a:focus-visible{outline:3px solid var(--gold);outline-offset:5px}
+@media(min-width:951px) and (max-width:1200px){#nav{gap:15px}#nav a{letter-spacing:.04em;font-size:9px}}
+@media(max-width:800px){.program-heading{grid-template-columns:1fr;gap:26px;margin-bottom:30px}.program-chapters{gap:10px}.program-chapter{padding:20px 16px}.program-caption{align-items:start}.program-start{font-size:12px;padding:8px 14px 8px 8px}.program-start svg{width:31px;height:31px;padding:9px}}
+@media(max-width:600px){.program-bar{padding:14px;gap:10px;font-size:9px;letter-spacing:.04em}.program-bar strong{font-size:9px;letter-spacing:.06em}.program-chapters{grid-template-columns:1fr}.program-chapter{padding:20px}.program-chapter strong{margin:10px 0 7px}.program-chapter .chapter-copy{max-width:none}.program-caption{padding:16px;flex-direction:column;gap:9px;font-size:12px}.program-start{right:4%;bottom:17%;padding:7px 12px 7px 7px;font-size:10px;gap:7px}.program-start svg{width:27px;height:27px;padding:8px}}
+</style>
+
 </head>
 <body>
 <div id="progress"></div>
-<header id="header"><div class="container"><a class="identity" href="#inicio" aria-label="Voltar ao início"><img class="brand-logo" src="./logo-cbh.png" width="55" height="55" alt="Logotipo oficial CBH"><div class="brand-words"><b>CONFEDERAÇÃO BRASILEIRA DE HIPISMO</b><small>CIRCUITO SENIOR TOP 2027</small></div></a><button class="menu-button" id="menuButton" aria-expanded="false" aria-label="Abrir menu">Menu <svg class="ico ico-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><nav id="nav"><a href="#conceito">Conceito</a><a href="#calendario">Calendário</a><a href="#midia">Mídia</a>
+<header id="header"><div class="container"><a class="identity" href="#inicio" aria-label="Voltar ao início"><img class="brand-logo" src="./logo-cbh.png" width="55" height="55" alt="Logotipo oficial CBH"><div class="brand-words"><b>CONFEDERAÇÃO BRASILEIRA DE HIPISMO</b><small>CIRCUITO SENIOR TOP 2027</small></div></a><button class="menu-button" id="menuButton" aria-expanded="false" aria-label="Abrir menu">Menu <svg class="ico ico-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><nav id="nav"><a href="#conceito">Conceito</a><a href="#calendario">Calendário</a><a href="#programa">Programa</a><a href="#midia">Mídia</a>
 <a href="#base">Base</a><a href="#evidencias">Vídeos</a><a href="#comercial">Oportunidades</a><a href="#topten">TOP TEN</a><a href="#producao">Produção</a></nav></div></header>
 <main>
 <section class="hero" id="inicio"><div class="container"><div class="eyebrow">Circuito Senior Top 2027</div><h1>O espetáculo<br>tem <em>hora</em><br>marcada.</h1><p>Uma temporada inteira de hipismo de alto nível. Um encontro recorrente entre esporte, conteúdo e audiência.</p><div class="hero-footer"><a href="#conceito" class="button gold">Conheça a proposta <svg class="ico ico-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a><div class="hero-meta">Sábados, 15h30<br>Temporada 2027</div></div></div></section>
 <section class="section dark" id="conceito"><div class="container"><div class="eyebrow reveal">Oportunidade de mídia</div><div class="split"><div class="reveal"><h2 class="section-title">Muito além<br>de uma<br><span class="gold-text">transmissão.</span></h2><p class="section-intro">A proposta é construir, junto a um parceiro de mídia, um novo hábito de consumo esportivo: os principais Grandes Prêmios do hipismo brasileiro, com distribuição ampliada e narrativa contínua ao longo do ano.</p><ul class="feature-list"><li><span>01</span> Calendário recorrente e previsível</li><li><span>02</span> Conteúdo para TV, streaming e redes sociais</li><li><span>03</span> Crescimento de audiência como prioridade inicial</li><li><span>04</span> Estrutura comercial escalável a médio prazo</li></ul></div><div class="visual reveal"><div class="photo"></div><div class="visual-caption">SOCIEDADE HÍPICA PAULISTA, SÃO PAULO</div></div></div><div class="stats reveal"><div class="stat prize-stat"><strong>R$ 3 mi</strong><small>Premiação total aprovada</small><span class="prize-breakdown">10 etapas de R$ 300 mil cada</span></div><div class="stat"><strong>10</strong><small>Etapas do circuito</small></div><div class="stat"><strong>01</strong><small>TOP TEN especial</small></div><div class="stat"><strong>15h30</strong><small>Horário fixo aos sábados</small></div><div class="stat"><strong>2027</strong><small>Abril a dezembro</small></div></div></div></section>
 <section class="section" id="calendario"><div class="container"><div class="eyebrow reveal">A temporada</div><h2 class="section-title reveal">O Brasil<br>entra em <span class="gold-text">pista.</span></h2><p class="section-intro reveal">De abril a novembro, dez Grandes Prêmios em calendário recorrente. Em dezembro, um evento especial reúne os dez melhores classificados do ano.</p><div class="timeline-wrap"><div class="stages" id="stageList" aria-label="Selecione uma etapa"></div><article class="stage-detail has-event-photo" id="stageDetail" aria-live="polite"><figure class="event-photo" id="eventPhoto"><img id="eventPhotoImage" src="./concurso-shp.jpg" alt="Registro do SHP Open"><figcaption id="eventPhotoCaption">Registro do SHP Open</figcaption></figure><div class="detail-head"><span class="stage-num" id="detailNum">ETAPA 01</span><h3 id="detailName">SHP Open</h3></div><div class="detail-bottom"><div class="date-large" id="detailDate">03.04.2027</div><p id="detailPlace">São Paulo, SP</p><span class="placeholder" id="detailTag">Sábado às 15h30</span></div></article></div><p class="small-note" style="margin-top:23px">Calendário editorial proposto a partir do calendário CBH em avaliação e das correspondências aprovadas para o projeto. Datas de GP são os sábados de cada concurso. Sujeitas à confirmação operacional e regulatória. Local do Brasileiro e data do TOP TEN ainda a definir.</p><div class="photo-story reveal"><figure><img src="./historia-salto.jpg" loading="lazy" alt="Conjunto durante um salto em competição de hipismo"><figcaption>ESPORTE E EMOÇÃO EM CADA ETAPA</figcaption></figure><figure><img src="./historia-premiacao.jpg" loading="lazy" alt="Cerimônia de premiação do hipismo"><figcaption>ATLETAS, HISTÓRIAS E CONQUISTAS</figcaption></figure></div></div></section>
+
+<section class="section program-demo" id="programa" aria-labelledby="programa-title">
+  <div class="container">
+    <div class="program-heading">
+      <div><div class="eyebrow">Demonstração do programa</div><h2 class="section-title" id="programa-title">Da pista<br>para a <span class="gold-text">tela.</span></h2></div>
+      <p class="section-intro">Uma amostra de como o Senior Top pode ganhar forma na televisão: a disputa em pista, a informação que orienta o público e a emoção da premiação.</p>
+    </div>
+    <figure class="program-player">
+      <div class="program-bar"><strong>Senior Top · Programa demonstrativo</strong><span>8min35 · Full HD</span></div>
+      <div class="program-screen">
+        <video id="programVideo" controls playsinline preload="none" poster="./programa-capa.jpg" width="1920" height="1080" aria-label="Demonstração do programa Circuito Senior Top 2027" aria-describedby="programa-note" src="https://github.com/rmcaveiro-lang/seniortop2027/releases/download/programa-demo-v1/Circuito_Senior_Top_2027_Demonstracao.mp4">
+          Seu navegador não reproduz este vídeo. <a href="https://github.com/rmcaveiro-lang/seniortop2027/releases/download/programa-demo-v1/Circuito_Senior_Top_2027_Demonstracao.mp4">Abrir o vídeo demonstrativo</a>.
+        </video>
+        <button class="program-start" id="programStart" type="button" hidden aria-label="Assistir à demonstração do programa" aria-controls="programVideo"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5 17 10 5 17.5Z"/></svg><span>Assistir à demonstração</span></button>
+      </div>
+      <p class="program-error" id="programError" role="status" hidden>Não foi possível carregar o vídeo agora. <a href="https://github.com/rmcaveiro-lang/seniortop2027/releases/download/programa-demo-v1/Circuito_Senior_Top_2027_Demonstracao.mp4" target="_blank" rel="noopener">Abra o vídeo em outra aba</a> ou tente novamente.</p>
+      <figcaption class="program-caption"><span>Saltos, GCs, replays e os momentos que fazem a conquista.</span><a href="https://github.com/rmcaveiro-lang/seniortop2027/releases/download/programa-demo-v1/Circuito_Senior_Top_2027_Demonstracao.mp4" target="_blank" rel="noopener">Abrir vídeo completo ↗</a></figcaption>
+    </figure>
+    <div class="program-chapters" role="group" aria-label="Escolha um trecho da demonstração">
+      <button class="program-chapter" type="button" data-program-time="7" aria-controls="programVideo"><span class="chapter-time"><span>01 / 00:07</span><span aria-hidden="true">↗</span></span><strong>A competição</strong><span class="chapter-copy">Percursos e replays com identificação dos conjuntos, cronômetro e penalidades na tela.</span></button>
+      <button class="program-chapter" type="button" data-program-time="308.833" aria-controls="programVideo"><span class="chapter-time"><span>02 / 05:09</span><span aria-hidden="true">↗</span></span><strong>A premiação</strong><span class="chapter-copy">Da entrada dos premiados ao pódio e à entrega do troféu: a história da conquista.</span></button>
+      <button class="program-chapter" type="button" data-program-time="460.833" aria-controls="programVideo"><span class="chapter-time"><span>03 / 07:41</span><span aria-hidden="true">↗</span></span><strong>A celebração</strong><span class="chapter-copy">Atletas, público e emoção no encerramento de uma experiência esportiva completa.</span></button>
+    </div>
+    <p class="program-note" id="programa-note">Imagens de referência do 36º JHSF Indoor 2026. Edição demonstrativa para a proposta do Circuito Senior Top 2027; a linguagem final do programa será desenvolvida em conjunto com o parceiro de mídia.</p>
+  </div>
+</section>
+
 <section class="section light" id="midia"><div class="container"><div class="eyebrow reveal">Presença digital</div><h2 class="section-title reveal">O evento termina.<br>O <span style="color:#357454">conteúdo continua.</span></h2><p class="section-intro reveal">Nossa prioridade é maximizar distribuição e frequência. A transmissão ao vivo é o ponto de partida para uma esteira editorial que começa antes do GP e continua após o resultado.</p><div class="cards3 flow"><div class="info-card reveal"><div class="n">01</div><div><h3>Antes da pista</h3><p>Histórias dos atletas, rivalidades, classificação, aquecimento e expectativa para cada etapa.</p></div></div><div class="info-card reveal"><div class="n">02</div><div><h3><span class="live-dot" aria-hidden="true"></span>Ao vivo</h3><p>Grande Prêmio com horário conhecido, apresentação editorial e distribuição nos canais do parceiro.</p></div></div><div class="info-card reveal"><div class="n">03</div><div><h3>Depois do GP</h3><p>Melhores momentos, cortes, entrevistas, bastidores, repercussão e construção de comunidade.</p></div></div></div><div class="coverage reveal">
 <div class="reach">
 <div class="reach-head"><div class="eyebrow">Base institucional</div><h3>CBH nas redes</h3></div>
@@ -502,4 +558,35 @@ const run=el=>{const to=+el.dataset.count,final=el.textContent,t0=performance.no
 const step=t=>{const p=Math.min(1,(t-t0)/d),e=1-Math.pow(1-p,4);el.textContent=p<1?fmt(to*e,el):final;if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)};
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){io.unobserve(e.target);run(e.target)}}),{threshold:.4});els.forEach(el=>io.observe(el));})();
 </script>
+
+<script id="programa-demo-js">
+(()=>{
+ const video=document.getElementById('programVideo'),start=document.getElementById('programStart'),error=document.getElementById('programError');
+ const chapters=[...document.querySelectorAll('[data-program-time]')];
+ start.hidden=false;
+ const showError=()=>{error.hidden=false;start.hidden=false;start.querySelector('span').textContent='Tentar novamente';};
+ async function playFrom(time){
+  error.hidden=true;
+  if(video.error)video.load();
+  if(time!==undefined){
+   if(video.readyState>=1)video.currentTime=time;
+   else video.addEventListener('loadedmetadata',()=>{video.currentTime=time;},{once:true});
+  }
+  try{await video.play();}catch(e){if(e.name!=='AbortError')showError();}
+ }
+ start.addEventListener('click',()=>playFrom());
+ video.addEventListener('playing',()=>{start.hidden=true;error.hidden=true;});
+ video.addEventListener('error',showError);
+ chapters.forEach(button=>button.addEventListener('click',()=>{
+  playFrom(Number(button.dataset.programTime));
+  video.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
+ }));
+ video.addEventListener('timeupdate',()=>{
+  let current=null;
+  chapters.forEach(button=>{if(video.currentTime>=Number(button.dataset.programTime))current=button;});
+  chapters.forEach(button=>{if(button===current)button.setAttribute('aria-current','true');else button.removeAttribute('aria-current');});
+ });
+})();
+</script>
+
 </body></html>
